@@ -16,7 +16,7 @@ export class ColorThemeGeneratorWrapper {
   #numberOfColorsInTheme = 3
 
   getThemes () {
-    let themes
+    let themes = []
     for (let i = 0; i < this.#colorThemeFactories.length; i++) {
       themes.push(this.#getTheme(i))
     }
@@ -24,6 +24,6 @@ export class ColorThemeGeneratorWrapper {
   }
 
   #getTheme (indexOfFactory) {
-    this.#colorThemeFactories[indexOfFactory].getColorTheme(this.#numberOfColorsInTheme)
+    return this.#colorThemeFactories[indexOfFactory].getColorTheme(this.#numberOfColorsInTheme)
   }
 }

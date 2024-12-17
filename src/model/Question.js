@@ -1,4 +1,4 @@
-import { QuestionEnum } from './QuestionEnum'
+import { QuestionEnum } from './QuestionEnum.js'
 
 export class Question {
   #question
