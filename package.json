@@ -1,0 +1,31 @@
+{
+  "name": "1dv610-l3-app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "start": "node build/index.js"
+  },
+  "author": {
+    "name": "Karin Silfversparre",
+    "email": "ks224ac@student.lnu.se"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "eslint-plugin-tsdoc": "^0.3.0",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.7.0"
+  },
+  "dependencies": {
+    "@inquirer/select": "^4.0.3",
+    "color-theme-generator": "^2.0.0"
+  }
+}
