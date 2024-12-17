@@ -1,4 +1,4 @@
-import { InquirerWrapper } from './view/IOSource.js'
+import { InquirerWrapper } from './view/InquirerWrapper.js'
 
 const source = new InquirerWrapper()
 const question = 'What do you think?'
