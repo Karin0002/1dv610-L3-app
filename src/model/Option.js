@@ -1,9 +1,9 @@
 export class Option {
-  name
+  theme
   colors
 
-  constructor (name, colors) {
-    this.name = name
+  constructor (theme, colors) {
+    this.theme = theme
     this.colors = colors
   }
 }
