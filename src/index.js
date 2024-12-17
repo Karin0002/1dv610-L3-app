@@ -1,6 +1,6 @@
 import { InquirerWrapper } from './view/InquirerWrapper.js'
 import { ColorWrapper } from './model/ColorWrapper.js'
-import { RGB } from './model/RGB.js'
+import { Rgb } from './model/Rgb.js'
 import { ColorThemeGeneratorWrapper } from './model/ColorThemeGeneratorWrapper.js'
 import { ThemeToNameQuestion } from './model/ThemeToNameQuestion.js'
 

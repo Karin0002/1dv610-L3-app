@@ -1,4 +1,4 @@
-export class RGB {
+export class Rgb {
   r
   g
   b
