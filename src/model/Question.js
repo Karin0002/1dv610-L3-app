@@ -4,7 +4,7 @@ export class Question {
   #question
 
   /**
-   * @param {QuestionEnum} questionEnum 
+   * @param {QuestionEnum} question 
    */
   constructor (question) {
     this.#question = question

@@ -1,5 +1,3 @@
-import { Option } from './Option.js'
-
 export class Options {
   options
 
