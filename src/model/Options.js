@@ -1,9 +1,9 @@
 import { Option } from './Option.js'
 
 export class Options {
-  options: Option[]
+  options
 
-  constructor (options: Option[]) {
+  constructor (options) {
     this.options = options
   }
 }

@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
+  "main": "./src/index.js",
   "scripts": {
-    "start": "node build/index.js"
+    "start": "node src/index.js"
   },
   "author": {
     "name": "Karin Silfversparre",
@@ -22,7 +21,8 @@
     "eslint-plugin-tsdoc": "^0.3.0",
     "globals": "^15.9.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.7.0"
+    "typescript-eslint": "^8.7.0",
+    "@lnu/eslint-config": "^1.1.10"
   },
   "dependencies": {
     "@inquirer/select": "^4.0.3",

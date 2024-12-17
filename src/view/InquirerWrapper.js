@@ -1,12 +1,12 @@
 import select from '@inquirer/select'
 
 export class InquirerWrapper {
-  async getAnswerToQuestion (question: string, ...options: string[]): Promise<string> {
+  async getAnswerToQuestion (question, ...options) {
     const answer = await select({
       message: question,
       choices: options
     })
 
-    return String(answer)
+    return answer
   }
 }
