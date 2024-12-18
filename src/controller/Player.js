@@ -1,21 +1,22 @@
 import { ScoreFactory } from '../model/ScoreFactory.js'
 import { RoundFactory } from '../model/ThemeToName/RoundFactory.js'
 import { Timer } from '../model/Timer.js'
+import { GameView } from '../view/GameView.js'
 
 export class Player {
   /**
    * @type {GameView}
    */
   #view
+  /**
+   * @type {RoundFactory}
+   */
+  #model
 
   /**
    * @type {ScoreFactory}
    */
   #scoreFactory
-  /**
-   * @type {RoundFactory}
-   */
-  #gameRoundFactory
 
   /**
    * @type {Timer}
@@ -24,13 +25,15 @@ export class Player {
 
   constructor (view, gameRoundFactory, scoreFactory, timer) {
     this.#view = view
-    this.#gameRoundFactory = gameRoundFactory
+    this.#model = gameRoundFactory
     this.#scoreFactory = scoreFactory
     this.#timer = timer
   }
 
   startGame (numberOfRounds) {
     try {
+      this.#view.displayWelcomeMessage()
+
       do {
         this.#play(numberOfRounds)
       } while (this.#shouldRestartGame());
@@ -52,7 +55,7 @@ export class Player {
 
   #loopRounds (numberOfRounds, score) {
     for (let i = 0; i < numberOfRounds; i++) {
-      const round = this.#gameRoundFactory.getRound()
+      const round = this.#model.getRound()
 
       this.#startTimer()
 
@@ -84,7 +87,7 @@ export class Player {
   }
 
   #displayScoreOfCompleteGame (score) {
-    this.#view.displayResultOfGame(score)
+    this.#view.displayScoreOfGame(score)
   }
 
   #shouldRestartGame () {
