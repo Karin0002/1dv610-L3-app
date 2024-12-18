@@ -1,13 +1,17 @@
-import { ColorThemeOptionsFactory } from './ColorThemeOptionsFactory.js'
-import { Options } from './Options.js'
-import { Option } from './Option.js'
-import { ColorThemeQuestionFactory } from './ColorThemeQuestionFactory.js'
+import { OptionCollectionFactory } from './OptionCollectionFactory.js'
+import { OptionCollection } from '../OptionCollection.js'
+import { Option } from '../Option.js'
+import { QuestionFactory } from './QuestionFactory.js'
+import { Question } from './Question.js'
 
-export class ThemeToNameRound {
+export class Round {
+  /**
+   * @type {Question}
+   */
   #question
 
   /**
-   * @type {Options}
+   * @type {OptionCollection}
    */
   #options
 
@@ -17,8 +21,8 @@ export class ThemeToNameRound {
   #correctAnswer
 
   /**
-   * @param {ColorThemeOptionsFactory} optionsFactory
-   * @param {ColorThemeQuestionFactory} questionFactory 
+   * @param {OptionCollectionFactory} optionsFactory
+   * @param {QuestionFactory} questionFactory 
    */
   constructor (optionsFactory, questionFactory) {
     this.#setOptions(optionsFactory)
@@ -26,14 +30,14 @@ export class ThemeToNameRound {
   }
 
   /**
-   * @param {ColorThemeOptionsFactory} factory 
+   * @param {OptionCollectionFactory} factory 
    */
   #setOptions (factory) {
     this.#options = factory.getColorThemeOptions()
   }
 
   /**
-   * @param {ColorThemeQuestionFactory} factory 
+   * @param {QuestionFactory} factory 
    */
   #setQuestionAndAnswer (factory) {
     // pick a random option from options as correct

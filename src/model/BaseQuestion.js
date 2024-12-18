@@ -1,6 +1,6 @@
 import { QuestionEnum } from './QuestionEnum.js'
 
-export class Question {
+export class BaseQuestion {
   #question
 
   /**

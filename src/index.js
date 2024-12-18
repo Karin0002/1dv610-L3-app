@@ -4,8 +4,8 @@ import { InquirerWrapper } from './view/InquirerWrapper.js'
 // import { ColorThemeGeneratorWrapper } from './model/ColorThemeGeneratorWrapper.js'
 // import { ThemeToNameQuestion } from './model/ThemeToNameQuestion.js'
 import { ColorThemeGeneratorWrapper } from './model/ColorThemeGeneratorWrapper.js'
-import { ColorThemeOptionsFactory } from './model/ColorThemeOptionsFactory.js'
-import { ColorThemeQuestionFactory } from './model/ColorThemeQuestionFactory.js'
+import { OptionCollectionFactory } from './model/ThemeToName/OptionCollectionFactory.js'
+import { QuestionFactory } from './model/ThemeToName/QuestionFactory.js'
 import { OptionFactory } from './model/OptionFactory.js'
 import { ColorWrapper } from './model/ColorWrapper.js'
 import { ThemeToNameRound } from './model/ThemeToNameRound.js'
@@ -30,8 +30,8 @@ import { RgbFactory } from './model/RgbFactory.js'
 // const q = new ThemeToNameQuestion(themes, new ColorWrapper())
 // console.log(q.toString())
 
-const fOption = new ColorThemeOptionsFactory(new OptionFactory(), new ColorThemeGeneratorWrapper())
-const fQuestion = new ColorThemeQuestionFactory(new ColorWrapper(new RgbFactory()))
+const fOption = new OptionCollectionFactory(new OptionFactory(), new ColorThemeGeneratorWrapper())
+const fQuestion = new QuestionFactory(new ColorWrapper(new RgbFactory()))
 
 const sut = new ThemeToNameRound(fOption, fQuestion)
 const question = sut.getQuestion()

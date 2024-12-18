@@ -1,8 +1,8 @@
-import { Question } from './Question.js'
-import { ColorWrapper } from './ColorWrapper.js'
-import { QuestionEnum } from './QuestionEnum.js'
+import { BaseQuestion } from '../BaseQuestion.js'
+import { ColorWrapper } from '../ColorWrapper.js'
+import { QuestionEnum } from '../QuestionEnum.js'
 
-export class ThemeToNameQuestion extends Question {
+export class Question extends BaseQuestion {
   #colorsInTheme
 
   #colorConverter

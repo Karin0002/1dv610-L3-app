@@ -1,29 +1,29 @@
-import { ColorThemeGeneratorWrapper } from './ColorThemeGeneratorWrapper.js'
-import { Options } from './Options.js'
-import { OptionFactory } from './OptionFactory.js'
+import { ColorThemeGeneratorWrapper } from '../ColorThemeGeneratorWrapper.js'
+import { OptionCollection } from '../OptionCollection.js'
+import { OptionFactory } from '../OptionFactory.js'
 
-export class ColorThemeOptionsFactory {
+export class OptionCollectionFactory {
   #optionFactory
-  #generator
+  #themeFactory
 
   /**
    * @param {OptionFactory} optionFactory
-   * @param {ColorThemeGeneratorWrapper} colorThemeGenerator
+   * @param {ColorThemeGeneratorWrapper} themeFactory
    */
-  constructor (optionFactory, colorThemeGenerator) {
+  constructor (optionFactory, themeFactory) {
     this.#optionFactory = optionFactory
-    this.#generator = colorThemeGenerator
+    this.#themeFactory = themeFactory
   }
 
   getColorThemeOptions () {
     const themes = this.#getThemes()
     const options = this.#getOptions(themes)
 
-    return new Options(options)
+    return new OptionCollection(options)
   }
 
   #getThemes () {
-    return this.#generator.getThemes()
+    return this.#themeFactory.getThemes()
   }
 
   #getOptions (themes) {
