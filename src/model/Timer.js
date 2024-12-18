@@ -33,6 +33,6 @@ export class Timer {
   }
 
   getTime () {
-    return this.#endTime - this.#startTime 
+    return (this.#endTime - this.#startTime) / 1000
   }
 }
