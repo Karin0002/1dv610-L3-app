@@ -30,9 +30,10 @@ export class Round {
    * @param {MathWrapper} mathWrapper
    */
   constructor (optionsFactory, questionFactory, mathWrapper) {
+    this.#math = mathWrapper
+    console.log(optionsFactory)
     this.#setOptions(optionsFactory)
     this.#setQuestionAndAnswer(questionFactory)
-    this.#math = mathWrapper
   }
 
   /**
@@ -60,7 +61,7 @@ export class Round {
   }
 
   #getRandomIndex () {
-    return this.#math.floor(this.#math.random() * (this.#options.options.length))
+    return this.#math.floor(this.#math.random() * this.#options.options.length)
   }
 
   getQuestion () {

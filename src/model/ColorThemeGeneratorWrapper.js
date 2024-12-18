@@ -20,6 +20,7 @@ export class ColorThemeGeneratorWrapper {
     for (let i = 0; i < this.#colorThemeFactories.length; i++) {
       themes.push(this.#getTheme(i))
     }
+
     return themes
   }
 

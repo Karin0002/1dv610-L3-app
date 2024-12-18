@@ -9,6 +9,8 @@ import { MathWrapper } from '../model/MathWrapper.js'
 import { OptionFactory } from '../model/OptionFactory.js'
 import { OptionCollectionFactory } from '../model/ThemeToName/OptionCollectionFactory.js'
 import { QuestionFactory } from '../model/ThemeToName/QuestionFactory.js'
+import { Player } from './Player.js'
+import { RgbFactory } from '../model/RgbFactory.js'
 
 export class PlayerFactory {
   getPlayer () {
@@ -19,13 +21,16 @@ export class PlayerFactory {
 
     const model = new RoundFactory(
       new OptionCollectionFactory(new OptionFactory(), new ColorThemeGeneratorWrapper()),
-      new QuestionFactory(new ColorWrapper()),
+      new QuestionFactory(new ColorWrapper(
+        new RgbFactory(),
+        new MathWrapper()
+      )),
       new MathWrapper()
     )
 
     const scoreFactory = new ScoreFactory()
 
-    const timer = new Timer()
+    const timer = new Timer(Date)
 
     return new Player(
       view,

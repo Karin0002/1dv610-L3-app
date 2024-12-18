@@ -1,5 +1,5 @@
-import { Score } from '../model/Score'
-import { InquirerWrapper } from './InquirerWrapper'
+import { Score } from '../model/Score.js'
+import { InquirerWrapper } from './InquirerWrapper.js'
 
 export class GameView {
   /**
@@ -24,7 +24,7 @@ export class GameView {
   }
 
   displayErrorMessage () {
-    const message = '\nOops, something went wrong\n!'
+    const message = '\nOops, something went wrong!\n'
 
     this.#output.log(message)
   }
@@ -34,7 +34,7 @@ export class GameView {
   }
 
   displayResultOfRound (result) {
-    const message = `\nYou answered ${result ? 'correctly' : 'incorrectly'}!`
+    const message = `You answered ${result ? 'correctly' : 'incorrectly'}!\n`
 
     this.#output.log(message)
   }
@@ -44,9 +44,9 @@ export class GameView {
    */
   displayScoreOfGame (score) {
     const message = `\nResult:
-        Number of correct guesses: ${score.getWins}
-        Number of incorret guesses: ${score.getLosses}
-        Time: ${score.getTime}
+  Correct guesses: ${score.getWins()}
+  Incorret guesses: ${score.getLosses()}
+  Time: ${score.getTime()}
     `
 
     this.#output.log(message)

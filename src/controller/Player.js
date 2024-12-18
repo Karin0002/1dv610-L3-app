@@ -30,37 +30,37 @@ export class Player {
     this.#timer = timer
   }
 
-  startGame (numberOfRounds) {
+  async startGame (numberOfRounds) {
     try {
       this.#view.displayWelcomeMessage()
 
       do {
-        this.#play(numberOfRounds)
-      } while (this.#shouldRestartGame());
-    } catch {
+        await this.#play(numberOfRounds)
+      } while (await this.#shouldRestartGame());
+    } catch (error) {
+      console.log(error)
       this.#view.displayErrorMessage()
     }
   }
 
-  #play (numberOfRounds) {
+  async #play (numberOfRounds) {
     const score = this.#scoreFactory.getScore()
 
-    this.#loopRounds(numberOfRounds, score)
-    
+    this.#startTimer()
+    await this.#loopRounds(numberOfRounds, score)
     this.#stopTimer()
+
     score.setTime(this.#timer.getTime())
 
     this.#displayScoreOfCompleteGame(score)
   }
 
-  #loopRounds (numberOfRounds, score) {
+  async #loopRounds (numberOfRounds, score) {
     for (let i = 0; i < numberOfRounds; i++) {
       const round = this.#model.getRound()
 
-      this.#startTimer()
-
-      const answer = this.#getAnswer(round.getQuestion(), round.getOptions())
-      const result = this.#isAnswerCorrect(answer)
+      const answer = await this.#getAnswer(round.getQuestion(), round.getOptions())
+      const result = this.#isAnswerCorrect(round, answer)
       this.#displayResult(result)
       score.addResult(result)
     }
@@ -70,11 +70,11 @@ export class Player {
     this.#timer.startTimer()
   }
 
-  #getAnswer (question, options) {
-    return this.#view.getAnswerToQuestion(question, options)
+  async #getAnswer (question, options) {
+    return await this.#view.getAnswerToQuestion(question, options)
   }
 
-  #isAnswerCorrect (answer) {
+  #isAnswerCorrect (round, answer) {
     return round.isAnswerCorrect(answer)
   }
 
@@ -90,7 +90,7 @@ export class Player {
     this.#view.displayScoreOfGame(score)
   }
 
-  #shouldRestartGame () {
-    return this.#view.shouldRestartGame()
+  async #shouldRestartGame () {
+    return await this.#view.shouldRestartGame()
   }
 }
