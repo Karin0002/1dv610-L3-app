@@ -38,7 +38,6 @@ export class Player {
         await this.#play(numberOfRounds)
       } while (await this.#shouldRestartGame());
     } catch (error) {
-      console.log(error)
       this.#view.displayErrorMessage()
     }
   }

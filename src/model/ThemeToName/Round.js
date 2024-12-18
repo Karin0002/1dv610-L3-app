@@ -31,7 +31,6 @@ export class Round {
    */
   constructor (optionsFactory, questionFactory, mathWrapper) {
     this.#math = mathWrapper
-    console.log(optionsFactory)
     this.#setOptions(optionsFactory)
     this.#setQuestionAndAnswer(questionFactory)
   }
