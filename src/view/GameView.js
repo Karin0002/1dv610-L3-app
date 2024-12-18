@@ -1,19 +1,19 @@
-import { Score } from '../model/Score.js'
 import { InquirerWrapper } from './InquirerWrapper.js'
+import { Score } from '../model/Score.js'
 
 export class GameView {
   /**
    * @type {InquirerWrapper}
    */
-  #inquirerWrapper
+  #inputSource
 
   /**
    * @type {Console}
    */
   #output
 
-  constructor (inqurierWrapper, output) {
-    this.#inquirerWrapper = inqurierWrapper
+  constructor (inputSource, output) {
+    this.#inputSource = inputSource
     this.#output = output
   }
 
@@ -29,10 +29,20 @@ export class GameView {
     this.#output.log(message)
   }
 
+  /**
+   * Displays a question to the user with options and returns the input.
+   *
+   * @param {string} question 
+   * @param {string[]} options 
+   * @returns {string}
+   */
   async getAnswerToQuestion (question, options) {
-    return await this.#inquirerWrapper.getAnswerToQuestion(question, options)
+    return await this.#inputSource.getAnswerToQuestion(question, options)
   }
 
+  /**
+   * @param {boolean} result
+   */
   displayResultOfRound (result) {
     const message = `You answered ${result ? 'correctly' : 'incorrectly'}!\n`
 
@@ -52,9 +62,14 @@ export class GameView {
     this.#output.log(message)
   }
 
+  /**
+   * Asks user if the game should be restarted.
+   *
+   * @returns {boolean} True if the user wants to restart game, otherwise false.
+   */
   async shouldRestartGame () {
     const question = '\nDo you want to restart the game?'
 
-    return await this.#inquirerWrapper.getBooleanAnswerToQuestion(question)
+    return await this.#inputSource.getBooleanAnswerToQuestion(question)
   }
 }

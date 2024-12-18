@@ -1,16 +1,16 @@
-import { ScoreFactory } from '../model/ScoreFactory.js'
-import { RoundFactory } from '../model/ThemeToName/RoundFactory.js'
-import { Timer } from '../model/Timer.js'
-import { GameView } from '../view/GameView.js'
-import { InquirerWrapper } from '../view/InquirerWrapper.js'
 import { ColorThemeGeneratorWrapper } from '../model/ColorThemeGeneratorWrapper.js'
 import { ColorWrapper } from '../model/ColorWrapper.js'
+import { GameView } from '../view/GameView.js'
+import { InquirerWrapper } from '../view/InquirerWrapper.js'
 import { MathWrapper } from '../model/MathWrapper.js'
 import { OptionFactory } from '../model/OptionFactory.js'
 import { OptionCollectionFactory } from '../model/ThemeToName/OptionCollectionFactory.js'
-import { QuestionFactory } from '../model/ThemeToName/QuestionFactory.js'
 import { Player } from './Player.js'
+import { QuestionFactory } from '../model/ThemeToName/QuestionFactory.js'
 import { RgbFactory } from '../model/RgbFactory.js'
+import { RoundFactory } from '../model/ThemeToName/RoundFactory.js'
+import { ScoreFactory } from '../model/ScoreFactory.js'
+import { Timer } from '../model/Timer.js'
 
 export class PlayerFactory {
   getPlayer () {

@@ -2,6 +2,9 @@ import { ColorWrapper } from '../ColorWrapper.js'
 import { Question } from './Question.js'
 
 export class QuestionFactory {
+  /**
+   * @type {ColorWrapper}
+   */
   #colorConverter
 
   /**
@@ -11,7 +14,7 @@ export class QuestionFactory {
     this.#colorConverter = colorConverter
   }
 
-  getColorThemeQuestion (colorsInTheme) {
+  getQuestion (colorsInTheme) {
     return new Question(colorsInTheme, this.#colorConverter)
   }
 }

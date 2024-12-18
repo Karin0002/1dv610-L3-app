@@ -1,7 +1,7 @@
 import { Option } from './Option.js'
 
 export class OptionFactory {
-  getOption (name, colors) {
-    return new Option(name, colors)
+  getOption (theme, colors) {
+    return new Option(theme, colors)
   }
 }

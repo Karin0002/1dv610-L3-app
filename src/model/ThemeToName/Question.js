@@ -1,12 +1,19 @@
 import { BaseQuestion } from '../BaseQuestion.js'
 import { ColorWrapper } from '../ColorWrapper.js'
 import { QuestionEnum } from '../QuestionEnum.js'
+import { Rgb } from '../Rgb.js'
 
 export class Question extends BaseQuestion {
   #colorsInTheme
 
+  /**
+   * @type {ColorWrapper}
+   */
   #colorConverter
 
+  /**
+   * @type {string[]}
+   */
   #formattedTheme
   #startCode = '\x1b[38;2;'
   #unicodeSquare = '\u{25A0}'
@@ -25,9 +32,9 @@ export class Question extends BaseQuestion {
   }
 
   #formatColors () {
-    const rgbColors = this.#getRGBColors()
+    const rgbColorTheme = this.#getRGBColors()
 
-    this.#formattedTheme = this.#getThemeAsString(rgbColors)
+    this.#formattedTheme = this.#getThemeAsString(rgbColorTheme)
   }
 
   #getRGBColors () {
@@ -47,6 +54,9 @@ export class Question extends BaseQuestion {
     return ansiCodes.join(' ')
   }
 
+  /**
+   * @param {Rgb} color
+   */
   #getAnsiColorEscapeCode (color) {
     return `${this.#startCode}${color.r};${color.g};${color.b}m${this.#unicodeSquare}${this.#resetCode}`
   }

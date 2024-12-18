@@ -1,6 +1,7 @@
-import { MathWrapper } from './MathWrapper.js'
-import { RgbFactory } from './RgbFactory.js'
 import Color from 'color'
+import { MathWrapper } from './MathWrapper.js'
+import { Rgb } from './Rgb.js'
+import { RgbFactory } from './RgbFactory.js'
 
 export class ColorWrapper {
   #rgbFactory
@@ -15,6 +16,12 @@ export class ColorWrapper {
     this.#math = mathWrapper
   }
 
+  /**
+   * Coverts a hsl string to a Rgb object.
+   *
+   * @param {string} hsl - A string formatted as a hsl string.
+   * @returns {Rgb}
+   */
   getRGB (hsl) {
     const color = Color(hsl)
     const rgb = color.rgb().array()

@@ -15,6 +15,9 @@ export class ColorThemeGeneratorWrapper {
 
   #numberOfColorsInTheme = 3
 
+  /**
+   * Returns an array of color themes.
+   */
   getThemes () {
     let themes = []
     for (let i = 0; i < this.#colorThemeFactories.length; i++) {

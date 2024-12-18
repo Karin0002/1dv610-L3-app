@@ -1,6 +1,9 @@
 import { QuestionEnum } from './QuestionEnum.js'
 
 export class BaseQuestion {
+  /**
+   * @type {QuestionEnum}
+   */
   #question
 
   /**

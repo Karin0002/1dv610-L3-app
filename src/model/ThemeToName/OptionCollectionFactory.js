@@ -3,8 +3,14 @@ import { OptionCollection } from '../OptionCollection.js'
 import { OptionFactory } from '../OptionFactory.js'
 
 export class OptionCollectionFactory {
+  /**
+   * @type {OptionFactory}
+   */
   #optionFactory
-  #themeFactory
+  /**
+   * @type {ColorThemeGeneratorWrapper}
+   */
+  #colorThemeFactory
 
   /**
    * @param {OptionFactory} optionFactory
@@ -12,7 +18,7 @@ export class OptionCollectionFactory {
    */
   constructor (optionFactory, themeFactory) {
     this.#optionFactory = optionFactory
-    this.#themeFactory = themeFactory
+    this.#colorThemeFactory = themeFactory
   }
 
   getColorThemeOptions () {
@@ -23,7 +29,7 @@ export class OptionCollectionFactory {
   }
 
   #getThemes () {
-    return this.#themeFactory.getThemes()
+    return this.#colorThemeFactory.getThemes()
   }
 
   #getOptions (themes) {

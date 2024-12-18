@@ -1,8 +1,20 @@
+import { MathWrapper } from '../MathWrapper.js'
+import { OptionCollectionFactory } from './OptionCollectionFactory.js'
+import { QuestionFactory } from './QuestionFactory.js'
 import { Round } from './Round.js'
 
 export class RoundFactory {
+  /**
+   * @type {OptionCollectionFactory}
+   */
   #optionCollectionFactory
+  /**
+   * @type {QuestionFactory}
+   */
   #questionFactory
+  /**
+   * @type {MathWrapper}
+   */
   #mathWrapper
 
   /**

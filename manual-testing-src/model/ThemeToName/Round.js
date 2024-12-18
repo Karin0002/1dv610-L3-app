@@ -4,6 +4,7 @@ import { Option } from '../Option.js'
 import { QuestionFactory } from './QuestionFactory.js'
 import { Question } from './Question.js'
 import { MathWrapper } from '../MathWrapper.js'
+import { ManualTestingEnum } from '../ManualTestingEnum.js'
 
 export class Round {
   /**
@@ -46,12 +47,8 @@ export class Round {
    * @param {QuestionFactory} factory 
    */
   #setQuestionAndAnswer (factory) {
-    // pick a random option from options as correct
-    // set #correctAnswer to the option
     this.#correctAnswer = this.#getRandomOption()
 
-    // create the question object
-    // set #question as the question object
     this.#question = factory.getColorThemeQuestion(this.#correctAnswer.colors)
   }
 
@@ -65,15 +62,18 @@ export class Round {
 
   getQuestion () {
     return this.#question
-    // return the set question
   }
 
   getOptions () {
-    // ONLY RETURNS THE NAME OF THE THEMES SO NO ONE CAN CHEAT
-    return this.#options.options.map((option) => option.theme)
+    // return this.#options.options.map((option) => option.theme)
+    return [
+      ManualTestingEnum.CORRECTOPTION,
+      ManualTestingEnum.INCORRECTOPTION
+    ]
   }
 
   isAnswerCorrect (answer) {
-    return answer === this.#correctAnswer.theme
+    // return answer === this.#correctAnswer.theme
+    return answer === ManualTestingEnum.CORRECTOPTION
   }
 }

@@ -1,13 +1,14 @@
-import { ScoreFactory } from '../model/ScoreFactory.js'
-import { RoundFactory } from '../model/ThemeToName/RoundFactory.js'
-import { Timer } from '../model/Timer.js'
 import { GameView } from '../view/GameView.js'
+import { RoundFactory } from '../model/ThemeToName/RoundFactory.js'
+import { ScoreFactory } from '../model/ScoreFactory.js'
+import { Timer } from '../model/Timer.js'
 
 export class Player {
   /**
    * @type {GameView}
    */
   #view
+
   /**
    * @type {RoundFactory}
    */
@@ -23,6 +24,12 @@ export class Player {
    */
   #timer
 
+  /**
+   * @param {GameView} view 
+   * @param {RoundFactory} model 
+   * @param {ScoreFactory} scoreFactory 
+   * @param {Timer} timer 
+   */
   constructor (view, model, scoreFactory, timer) {
     this.#view = view
     this.#model = model

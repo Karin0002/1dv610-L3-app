@@ -1,9 +1,9 @@
+import { MathWrapper } from '../MathWrapper.js'
 import { OptionCollectionFactory } from './OptionCollectionFactory.js'
 import { OptionCollection } from '../OptionCollection.js'
 import { Option } from '../Option.js'
 import { QuestionFactory } from './QuestionFactory.js'
 import { Question } from './Question.js'
-import { MathWrapper } from '../MathWrapper.js'
 
 export class Round {
   /**
@@ -25,34 +25,30 @@ export class Round {
   #math
 
   /**
-   * @param {OptionCollectionFactory} optionsFactory
+   * @param {OptionCollectionFactory} optionCollectionFactory
    * @param {QuestionFactory} questionFactory 
    * @param {MathWrapper} mathWrapper
    */
-  constructor (optionsFactory, questionFactory, mathWrapper) {
+  constructor (optionCollectionFactory, questionFactory, mathWrapper) {
     this.#math = mathWrapper
-    this.#setOptions(optionsFactory)
+    this.#setOptions(optionCollectionFactory)
     this.#setQuestionAndAnswer(questionFactory)
   }
 
   /**
-   * @param {OptionCollectionFactory} factory 
+   * @param {OptionCollectionFactory} optionCollectionFactory 
    */
-  #setOptions (factory) {
-    this.#options = factory.getColorThemeOptions()
+  #setOptions (optionCollectionFactory) {
+    this.#options = optionCollectionFactory.getColorThemeOptions()
   }
 
   /**
-   * @param {QuestionFactory} factory 
+   * @param {QuestionFactory} questionFactory 
    */
-  #setQuestionAndAnswer (factory) {
-    // pick a random option from options as correct
-    // set #correctAnswer to the option
+  #setQuestionAndAnswer (questionFactory) {
     this.#correctAnswer = this.#getRandomOption()
 
-    // create the question object
-    // set #question as the question object
-    this.#question = factory.getColorThemeQuestion(this.#correctAnswer.colors)
+    this.#question = questionFactory.getQuestion(this.#correctAnswer.colors)
   }
 
   #getRandomOption () {
@@ -65,14 +61,15 @@ export class Round {
 
   getQuestion () {
     return this.#question
-    // return the set question
   }
 
   getOptions () {
-    // ONLY RETURNS THE NAME OF THE THEMES SO NO ONE CAN CHEAT
     return this.#options.options.map((option) => option.theme)
   }
 
+  /**
+   * @param {string} answer 
+   */
   isAnswerCorrect (answer) {
     return answer === this.#correctAnswer.theme
   }

@@ -13,17 +13,20 @@ export class Timer {
    */
   #endTime
 
+  /**
+   * @param {Date} dateObject 
+   */
   constructor (dateObject) {
     this.#date = dateObject
   }
 
   startTimer () {
-    this.#resetFields()
+    this.#resetTimer()
 
     this.#startTime = this.#date.now()
   }
 
-  #resetFields () {
+  #resetTimer () {
     this.#startTime = ''
     this.#endTime = ''
   }
@@ -34,7 +37,7 @@ export class Timer {
 
   getTime () {
     const time = this.#calcTime()
-    this.#resetFields()
+    this.#resetTimer()
 
     return time
   }

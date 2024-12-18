@@ -9,6 +9,9 @@ export class Score {
     this.#time = 0
   }
 
+  /**
+   * @param {boolean} didWin 
+   */
   addResult (didWin) {
     if (didWin) {
       this.#addWin()
@@ -25,6 +28,9 @@ export class Score {
     this.#losses++
   }
 
+  /**
+   * @param {number} time 
+   */
   setTime (time) {
     this.#time = time
   }
