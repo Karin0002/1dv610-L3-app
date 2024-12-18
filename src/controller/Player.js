@@ -23,9 +23,9 @@ export class Player {
    */
   #timer
 
-  constructor (view, gameRoundFactory, scoreFactory, timer) {
+  constructor (view, model, scoreFactory, timer) {
     this.#view = view
-    this.#model = gameRoundFactory
+    this.#model = model
     this.#scoreFactory = scoreFactory
     this.#timer = timer
   }
