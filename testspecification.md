@@ -5,7 +5,8 @@ View that a question appears with a set of colors.
 
 ### Input:
 1. Navigate to project.
-2. In the terminal, enter **npm run start-manual-testing-instance**
+2. In the terminal, enter **npm run start-manual-testing-instance**.
+3. Click the enter key on the keyboard.
 
 ### Output:
 - A welcome message should be displayed saying "Welcome to color-quiz!"
@@ -28,6 +29,7 @@ View that a set of options appears.
 - The first option should say "this is the correct option", see figure 2.
 - The text of the first option should be colored blue.
 - The second option should say "this is the incorrect option", see figure 2.
+- The text of the second option should be colored white.
 
 | ![](./img/figure2.png) |
 |----------------------------------------------------------|
