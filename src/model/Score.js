@@ -9,11 +9,19 @@ export class Score {
     this.#time = 0
   }
 
-  addWin () {
+  addResult (didWin) {
+    if (didWin) {
+      this.#addWin()
+    } else {
+      this.#addLoss()
+    }
+  }
+
+  #addWin () {
     this.#wins++
   }
 
-  addLoss () {
+  #addLoss () {
     this.#losses++
   }
 

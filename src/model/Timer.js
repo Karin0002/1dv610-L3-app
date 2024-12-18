@@ -33,6 +33,13 @@ export class Timer {
   }
 
   getTime () {
+    const time = this.#calcTime()
+    this.#resetFields()
+
+    return time
+  }
+
+  #calcTime () {
     return (this.#endTime - this.#startTime) / 1000
   }
 }
