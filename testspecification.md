@@ -14,7 +14,7 @@ View that a question appears with a set of colors.
 - The question should be followed by three differntly colored squares, see figure 1 as an example (the colors of the square might be different from figure 1).
 
 | ![](./img/figure1.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 1 |
 ---
 
@@ -32,7 +32,7 @@ View that a set of options appears.
 - The text of the second option should be colored white.
 
 | ![](./img/figure2.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 2 |
 ---
 
@@ -48,7 +48,7 @@ Navigate between options using the arrow keys.
 - The text of the second option should be colored blue, see figure 3.
 
 | ![](./img/figure3.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 3 |
 ---
 
@@ -63,7 +63,7 @@ Pick the correct option for a question.
 - The text 'You answered correctly!' should be displayed, see figure 4.
 
 | ![](./img/figure4.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 4 |
 ---
 
@@ -78,7 +78,7 @@ Pick the incorrect option for a question.
 - The text 'You answered incorrectly!' should be displayed, see figure 5.
 
 | ![](./img/figure5.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 5 |
 ---
 
@@ -94,6 +94,6 @@ View that the time it took to complete the quiz appears.
 - A message should be displayed that shows the time it took to complete the quiz, see figure 6 as an example (the number after "Time" might be different from figure 6).
 
 | ![](./img/figure6.png) |
-|----------------------------------------------------------|
+|------------------------|
 | Figure 6 |
 ---
