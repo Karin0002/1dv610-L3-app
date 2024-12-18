@@ -23,7 +23,7 @@ npm i
 npm start
 ```
 
-5. Start playing, use the arrows to navigate between options and enter to pick one option, use keys y for yes or n for no when asked to restart game.
+5. Start playing, use the **arrows** to navigate between options and **enter** to pick one option, use keys **y** for yes or **n** for no followed by **enter** when asked to restart game.
 
 
 

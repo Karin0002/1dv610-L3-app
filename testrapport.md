@@ -1,14 +1,12 @@
-Requirements:
+| OS | Device | Terminal |
+|----|--------|----------|
+| Windows 11 | YOGA Slim 7i | git bash 2.41.0 |
 
-1. As an end-user I want to recive questions that asks me to pick the name of a color theme that matches a specific set of colors.
-2. As an end-user I want to recive questions that asks me to pick a set of colors that matches the name of a specific color theme.
-3. As an end-user I want to be recieve questions that asks me to pick the hsl string that matches a specific color.
-4. As an end-user I want to be recieve questions that asks me to pick a color that matches a specific hsl string.
+| Date | Test case | Result | REQ1 | REQ2 | REQ3 | REQ4 | REQ5 | REQ6 | REQ7 | REQ8 |
+|------|-----------|--------|------|------|------|------|------|------|------|------|
+| 2024-05-30 | 1.1 |  |  |  |  |  |  |  |  |  |
+| 2024-05-30 | 1.2 |  |  |  |  |  |  |  |  |  |
+| 2024-05-30 | 1.3 |  | ✅ |  |  |  |  |  |  |  |
+| 2024-05-30 | 1.4 |  |  |  |  |  |  |  |  |  |
+| 2024-05-30 | 2.1 |  |  |  |  |  |  |  |  |  |
 
-5. As an end-user I want to be able to choose the answer from a list of options.
-
-6. As an end-user I want to see if I answered a question correctly.
-
-7. As an end-user I want to see how long it took me to finish a quiz.
-
-8. As an end-user I want to be able to see how well I did compared to other gamerounds I have completed.
