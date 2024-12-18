@@ -3,30 +3,36 @@ import { OptionCollection } from '../OptionCollection.js'
 import { Option } from '../Option.js'
 import { QuestionFactory } from './QuestionFactory.js'
 import { Question } from './Question.js'
+import { MathWrapper } from '../MathWrapper.js'
 
 export class Round {
   /**
    * @type {Question}
    */
   #question
-
   /**
    * @type {OptionCollection}
    */
   #options
-
   /**
    * @type {Option}
    */
   #correctAnswer
 
   /**
+   * @type {MathWrapper}
+   */
+  #math
+
+  /**
    * @param {OptionCollectionFactory} optionsFactory
    * @param {QuestionFactory} questionFactory 
+   * @param {MathWrapper} mathWrapper
    */
-  constructor (optionsFactory, questionFactory) {
+  constructor (optionsFactory, questionFactory, mathWrapper) {
     this.#setOptions(optionsFactory)
     this.#setQuestionAndAnswer(questionFactory)
+    this.#math = mathWrapper
   }
 
   /**
@@ -54,7 +60,7 @@ export class Round {
   }
 
   #getRandomIndex () {
-    return Math.floor(Math.random() * (this.#options.options.length))
+    return this.#math.floor(this.#math.random() * (this.#options.options.length))
   }
 
   getQuestion () {
